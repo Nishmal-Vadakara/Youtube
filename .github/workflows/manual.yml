@@ -1,14 +1,12 @@
-# This is a basic workflow that is manually triggered
 
-name: Manual workflow
-
+name: Update YouTube Title
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/3 * * * *"
 
 jobs:
-  update-video:
+  update-title:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,5 +21,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Code.gs
-        run: node Code.gs
+      - name: Run script
+        run: node updateTitle.js
